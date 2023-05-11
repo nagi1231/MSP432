@@ -1,5 +1,5 @@
 Dependencies for Project 'template', Target 'template': (DO NOT MODIFY !)
-F (..\User\main.c)(0x645C71B7)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x645C9998)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/driverlib.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/adc14.h)(0x5E30CD67)
 I (D:\Environment\keil\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
@@ -43,7 +43,7 @@ I (..\Lib\ti/devices/msp432p4xx/driverlib/wdt_a.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/sysctl.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/flash.h)(0x5E30CD67)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -526,14 +526,14 @@ F (..\RTthread\bsp\board.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB
 I (D:\Environment\keil\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
 I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\libcpu\arm\cortex-m4\cpuport.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\cpuport.o --omf_browse .\objects\cpuport.crf --depend .\objects\cpuport.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -542,7 +542,7 @@ F (..\RTthread\libcpu\arm\cortex-m4\context_rvds.S)(0x645C5A3B)(--cpu Cortex-M4.
 F (..\RTthread\src\clock.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\clock.o --omf_browse .\objects\clock.crf --depend .\objects\clock.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -550,14 +550,14 @@ I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\components.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\components.o --omf_browse .\objects\components.crf --depend .\objects\components.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
 I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\cpu.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\cpu_1.o --omf_browse .\objects\cpu_1.crf --depend .\objects\cpu_1.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -566,14 +566,14 @@ I (..\RTthread\include\rthw.h)(0x645C5A3B)
 F (..\RTthread\src\idle.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\idle.o --omf_browse .\objects\idle.crf --depend .\objects\idle.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
 I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\ipc.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\ipc.o --omf_browse .\objects\ipc.crf --depend .\objects\ipc.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -582,14 +582,14 @@ I (..\RTthread\include\rthw.h)(0x645C5A3B)
 F (..\RTthread\src\irq.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\irq.o --omf_browse .\objects\irq.crf --depend .\objects\irq.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
 I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\kservice.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\kservice.o --omf_browse .\objects\kservice.crf --depend .\objects\kservice.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -598,7 +598,7 @@ I (..\RTthread\include\rthw.h)(0x645C5A3B)
 F (..\RTthread\src\mem.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\mem.o --omf_browse .\objects\mem.crf --depend .\objects\mem.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -606,7 +606,7 @@ I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\memheap.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\memheap.o --omf_browse .\objects\memheap.crf --depend .\objects\memheap.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -614,14 +614,14 @@ I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\mempool.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\mempool.o --omf_browse .\objects\mempool.crf --depend .\objects\mempool.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
 I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\object.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\object.o --omf_browse .\objects\object.crf --depend .\objects\object.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -629,7 +629,7 @@ I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 F (..\RTthread\src\scheduler.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\scheduler.o --omf_browse .\objects\scheduler.crf --depend .\objects\scheduler.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -638,7 +638,7 @@ I (..\RTthread\include\rthw.h)(0x645C5A3B)
 F (..\RTthread\src\slab.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\slab.o --omf_browse .\objects\slab.crf --depend .\objects\slab.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
@@ -646,14 +646,14 @@ I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\thread.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
 I (..\RTthread\include\rthw.h)(0x645C5A3B)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
 I (..\RTthread\include\rtservice.h)(0x645C5A3B)
 F (..\RTthread\src\timer.c)(0x645C5A3B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Lib -I ..\Lib\CMSIS\include -I ..\RTthread\bsp -I ..\RTthread\include -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (..\RTthread\include\rtthread.h)(0x645C5A3B)
-I (..\RTthread\bsp\rtconfig.h)(0x645C6FAB)
+I (..\RTthread\bsp\rtconfig.h)(0x645C998E)
 I (..\RTthread\include\rtdebug.h)(0x645C5A3B)
 I (..\RTthread\include\rtdef.h)(0x645C5A3B)
 I (D:\Environment\keil\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)

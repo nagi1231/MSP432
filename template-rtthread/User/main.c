@@ -67,7 +67,7 @@ static void blink_entry()
 
 int main(void)
 {
-	blink_thread=rt_thread_create("blink",blink_entry,RT_NULL,1024,5,5);
+	blink_thread=rt_thread_create("blink",blink_entry,RT_NULL,1024,25,5);
 	if(blink_thread!=RT_NULL)
 	{
 		rt_thread_startup(blink_thread);
