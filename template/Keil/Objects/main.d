@@ -41,3 +41,7 @@
 .\objects\main.o: ..\Lib\ti/devices/msp432p4xx/driverlib/wdt_a.h
 .\objects\main.o: ..\Lib\ti/devices/msp432p4xx/driverlib/sysctl.h
 .\objects\main.o: ..\Lib\ti/devices/msp432p4xx/driverlib/flash.h
+.\objects\main.o: D:\Environment\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: ..\User\Driver\Serial.h
+.\objects\main.o: ..\User\Driver\HC-SR04.h
+.\objects\main.o: ..\User\Driver\Delay.h

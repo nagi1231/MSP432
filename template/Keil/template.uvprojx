@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Bsp\peripheral;..\Bsp\common;..\Lib;..\Lib\CMSIS\include</IncludePath>
+              <IncludePath>..\User;..\Bsp\peripheral;..\Bsp\common;..\Lib;..\Lib\CMSIS\include;..\User\Driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -551,6 +551,26 @@
               <FileName>startup_msp432p401r_uvision.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\Lib\ti\devices\msp432p4xx\startup_system_files\keil\startup_msp432p401r_uvision.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>HC-SR04.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\HC-SR04.c</FilePath>
+            </File>
+            <File>
+              <FileName>Serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\Serial.c</FilePath>
             </File>
           </Files>
         </Group>
