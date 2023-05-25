@@ -1,5 +1,5 @@
 Dependencies for Project 'template', Target 'template': (DO NOT MODIFY !)
-F (..\User\main.c)(0x646E06F8)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Bsp\peripheral -I ..\Bsp\common -I ..\Lib -I ..\Lib\CMSIS\include -I ..\User\Driver -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x646F7719)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Bsp\peripheral -I ..\Bsp\common -I ..\Lib -I ..\Lib\CMSIS\include -I ..\User\Driver -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/driverlib.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/adc14.h)(0x5E30CD67)
 I (D:\Environment\keil\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
@@ -44,7 +44,7 @@ I (..\Lib\ti/devices/msp432p4xx/driverlib/sysctl.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/flash.h)(0x5E30CD67)
 I (D:\Environment\keil\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 I (..\User\Driver\Serial.h)(0x646DC90D)
-I (..\User\Driver\HC-SR04.h)(0x646DD2EA)
+I (..\User\Driver\HC-SR04.h)(0x646EFA3E)
 I (..\User\Driver\Delay.h)(0x646DE7AB)
 F (..\Lib\ti\devices\msp432p4xx\driverlib\adc14.c)(0x5E30CD67)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Bsp\peripheral -I ..\Bsp\common -I ..\Lib -I ..\Lib\CMSIS\include -I ..\User\Driver -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\adc14.o --omf_browse .\objects\adc14.crf --depend .\objects\adc14.d)
 I (D:\Environment\keil\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
@@ -564,8 +564,8 @@ I (..\Lib\ti/devices/msp432p4xx/driverlib/uart.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/wdt_a.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/sysctl.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/flash.h)(0x5E30CD67)
-F (..\User\Driver\HC-SR04.c)(0x646E15B5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Bsp\peripheral -I ..\Bsp\common -I ..\Lib -I ..\Lib\CMSIS\include -I ..\User\Driver -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\hc-sr04.o --omf_browse .\objects\hc-sr04.crf --depend .\objects\hc-sr04.d)
-I (..\User\Driver\HC-SR04.h)(0x646DD2EA)
+F (..\User\Driver\HC-SR04.c)(0x646F680E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\Bsp\peripheral -I ..\Bsp\common -I ..\Lib -I ..\Lib\CMSIS\include -I ..\User\Driver -D__UVISION_VERSION="526" -D__MSP432P401R__-o .\objects\hc-sr04.o --omf_browse .\objects\hc-sr04.crf --depend .\objects\hc-sr04.d)
+I (..\User\Driver\HC-SR04.h)(0x646EFA3E)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/driverlib.h)(0x5E30CD67)
 I (..\Lib\ti/devices/msp432p4xx/driverlib/adc14.h)(0x5E30CD67)
 I (D:\Environment\keil\ARM\ARMCC\include\stdint.h)(0x599EDB3E)

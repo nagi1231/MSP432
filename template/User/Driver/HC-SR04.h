@@ -7,7 +7,7 @@
 
 void init_hc_sr04(void);
 void trigger_measure(void);
-float read_hc_sr04(void);
+float read_hc_sr04(uint32_t countValue);
 
 
 #endif

@@ -58,6 +58,8 @@
 
 uint32_t countValue;
 char msg[30];
+bool nextTrigger=true;
+volatile bool convertResult;
 
 int main(void)
 {
@@ -67,19 +69,22 @@ int main(void)
 	WDT_A_hold(WDT_A_BASE);
 	MAP_FPU_enableModule();
   MAP_FPU_enableLazyStacking();
-	
 	while(1)
 	{
+		//触发hcsr04
 		trigger_measure();
+		//等待p2.5变为上升沿
 		while(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN5)!=1);
+		//开启p2.5的捕获模式
 		GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P2,GPIO_PIN5,GPIO_PRIMARY_MODULE_FUNCTION);
 		Timer_A_startCounter(TIMER_A0_BASE,TIMER_A_CONTINUOUS_MODE);
+		//捕获下降沿
 		while(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN5)!=0);
 		countValue=Timer_A_getCaptureCompareCount(TIMER_A0_BASE,TIMER_A_CAPTURECOMPARE_REGISTER_2);
 		GPIO_setAsInputPinWithPullDownResistor(GPIO_PORT_P2,GPIO_PIN5);
 		Timer_A_clearTimer(TIMER_A0_BASE);
 		Timer_A_stopTimer(TIMER_A0_BASE);
-		float distance=read_hc_sr04();
+		float distance=read_hc_sr04(countValue);
 		sprintf(msg,"%f\r\n",distance);
 		sendText(msg);
 		delay_ms(20);

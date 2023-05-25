@@ -4,6 +4,7 @@
 #include "Delay.h"
 
 extern char msg[];
+volatile extern bool convertResult;
 extern uint32_t countValue;
 
 //p2.5为输入引脚
@@ -27,12 +28,18 @@ const Timer_A_ContinuousModeConfig hcsrContinueConfig=
 
 void init_hc_sr04(void)
 {
+	
+	GPIO_setAsOutputPin(GPIO_PORT_P1,GPIO_PIN0);
+	GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN0);
+	
 	//p2.5下拉输入，上升沿触发外部中断
 	GPIO_setAsInputPinWithPullDownResistor(GPIO_PORT_P2,GPIO_PIN5);
 //	GPIO_clearInterruptFlag(GPIO_PORT_P2,GPIO_PIN5);
 //	GPIO_selectInterruptEdge(GPIO_PORT_P2,GPIO_PIN5,GPIO_LOW_TO_HIGH_TRANSITION);
 //	GPIO_enableInterrupt(GPIO_PORT_P2,GPIO_PIN5);
 //	Interrupt_enableInterrupt(INT_PORT2);
+//	Interrupt_enableSleepOnIsrExit();
+//  Interrupt_enableMaster();	
 
 	//p3.0输出
 	GPIO_setAsOutputPin(GPIO_PORT_P3,GPIO_PIN0);
@@ -56,7 +63,7 @@ void trigger_measure(void)
 //	sendText(msg);
 }
 //单位为cm
-float read_hc_sr04()
+float read_hc_sr04(uint32_t countValue)
 {
 	float distance=countValue*0.017;
 	return distance;
@@ -70,10 +77,14 @@ void PORT2_IRQHandler(void)
 	
 	if(status&GPIO_PIN5)
 	{
+		
 //		sprintf(msg,"high interrupt");
 //		sendText(msg);
 		GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P2,GPIO_PIN5,GPIO_PRIMARY_MODULE_FUNCTION);
+		Interrupt_disableInterrupt(INT_PORT2);
+		Interrupt_enableInterrupt(INT_TA0_N);
 		Timer_A_startCounter(TIMER_A0_BASE,TIMER_A_CONTINUOUS_MODE);
+		
 	}
 }
 
@@ -81,9 +92,19 @@ void TA0_N_IRQHandler(void)
 {
 //	sprintf(msg,"count finish");
 //	sendText(msg);
+	
 	Timer_A_clearCaptureCompareInterrupt(TIMER_A0_BASE,TIMER_A_CAPTURECOMPARE_REGISTER_2);
 	countValue=Timer_A_getCaptureCompareCount(TIMER_A0_BASE,TIMER_A_CAPTURECOMPARE_REGISTER_2);
 	GPIO_setAsInputPinWithPullDownResistor(GPIO_PORT_P2,GPIO_PIN5);
 	Timer_A_clearTimer(TIMER_A0_BASE);
 	Timer_A_stopTimer(TIMER_A0_BASE);
+	convertResult=true;
+	Interrupt_disableInterrupt(INT_TA0_N);
+	float distance=read_hc_sr04(countValue);
+	sprintf(msg,"%f\r\n",distance);
+	sendText(msg);
+//	delay_ms(20);
+	trigger_measure();
+//	GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN0);
+//	if(convertResult) 
 }
