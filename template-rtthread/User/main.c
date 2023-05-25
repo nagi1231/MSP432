@@ -51,12 +51,21 @@
 
 #include <ti/devices/msp432p4xx/driverlib/driverlib.h>
 #include "rtthread.h"
+#include "HC-SR04.h"
+#include "Delay.h"
+#include "Serial.h"
+#include "stdio.h"
 
-rt_thread_t blink_thread = RT_NULL;
+//主时钟信号为12Mhz，在system_msp432p401r.c中配置
+//rt_thread_t blink_thread = RT_NULL;
 
+//信号量
+rt_sem_t AbleToConvert;
+extern uint32_t countValue;
+
+//红灯闪烁的线程
 static void blink_entry()
 {
-	WDT_A_hold(WDT_A_BASE);
 	GPIO_setAsOutputPin(GPIO_PORT_P1,GPIO_PIN0);
 	while(1)
 	{
@@ -65,14 +74,78 @@ static void blink_entry()
 	}
 }
 
-int main(void)
+//hcsr采样的线程
+static void hcsr_entry()
 {
-	blink_thread=rt_thread_create("blink",blink_entry,RT_NULL,1024,25,5);
-	if(blink_thread!=RT_NULL)
+	init_hc_sr04();
+	char text[20];
+	AbleToConvert=rt_sem_create("AbleToConvert",0,RT_IPC_FLAG_PRIO);
+	while(1)
 	{
-		rt_thread_startup(blink_thread);
+		trigger_measure();
+		//获得信号量，将其通过串口发送；最多等待50tick，防止错过触发中断导致没获得信号一直卡死
+		if(rt_sem_take(AbleToConvert,50)==RT_EOK)
+		{
+			sprintf(text,"%f\r\n",read_hc_sr04(countValue));
+			sendText(text);
+			Interrupt_enableInterrupt(INT_PORT2);
+		}
 	}
 }
+
+
+
+
+
+int main(void)
+{
+	WDT_A_hold(WDT_A_BASE);
+	Interrupt_enableMaster();
+	Delay_Init();
+  initSerial();
+	
+	//创建并运行hcsr线程
+	rt_thread_t hcsr_thread=rt_thread_create("HC-SR04",hcsr_entry,RT_NULL,1024,25,50);
+	if(hcsr_thread!=RT_NULL)
+	{
+		rt_thread_startup(hcsr_thread);
+	}
+	
+	
+//	blink_thread=rt_thread_create("blink",blink_entry,RT_NULL,1024,25,5);
+//	if(blink_thread!=RT_NULL)
+//	{
+//		rt_thread_startup(blink_thread);
+//	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //int main(void)
 //{

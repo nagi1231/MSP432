@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Lib;..\Lib\CMSIS\include;..\RTthread\bsp;..\RTthread\include</IncludePath>
+              <IncludePath>..\User;..\Lib;..\Lib\CMSIS\include;..\RTthread\bsp;..\RTthread\include;..\User\Driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -646,6 +646,26 @@
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\RTthread\src\timer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MyDrivers</GroupName>
+          <Files>
+            <File>
+              <FileName>HC-SR04.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\HC-SR04.c</FilePath>
+            </File>
+            <File>
+              <FileName>Serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\Serial.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\Delay.c</FilePath>
             </File>
           </Files>
         </Group>

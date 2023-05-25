@@ -48,3 +48,7 @@
 .\objects\main.o: ..\RTthread\include\rtdef.h
 .\objects\main.o: D:\Environment\keil\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\main.o: ..\RTthread\include\rtservice.h
+.\objects\main.o: ..\User\Driver\HC-SR04.h
+.\objects\main.o: ..\User\Driver\Delay.h
+.\objects\main.o: ..\User\Driver\Serial.h
+.\objects\main.o: D:\Environment\keil\ARM\ARMCC\Bin\..\include\stdio.h
