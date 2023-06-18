@@ -667,6 +667,16 @@
               <FileType>1</FileType>
               <FilePath>..\User\Driver\Delay.c</FilePath>
             </File>
+            <File>
+              <FileName>Interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\Interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>HC-05.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\HC-05.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
