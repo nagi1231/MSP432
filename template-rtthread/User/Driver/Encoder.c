@@ -5,20 +5,11 @@ int encoder_right;
 
 void init_encoder_left()
 {
-	GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P2,GPIO_PIN3|GPIO_PIN4);
-	GPIO_clearInterruptFlag(GPIO_PORT_P2,GPIO_PIN3|GPIO_PIN4);
-	GPIO_enableInterrupt(GPIO_PORT_P2,GPIO_PIN3|GPIO_PIN4);
-	Interrupt_enableInterrupt(INT_PORT2);
+	GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN1|GPIO_PIN6);
+	GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN1|GPIO_PIN6);
+	GPIO_enableInterrupt(GPIO_PORT_P4,GPIO_PIN1|GPIO_PIN6);
+	Interrupt_enableInterrupt(INT_PORT4);
 }
-
-
-//void init_encoder_left()
-//{
-//	GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P6,GPIO_PIN6|GPIO_PIN7);
-//	GPIO_clearInterruptFlag(GPIO_PORT_P6,GPIO_PIN6|GPIO_PIN7);
-//	GPIO_enableInterrupt(GPIO_PORT_P6,GPIO_PIN6|GPIO_PIN7);
-//	Interrupt_enableInterrupt(INT_PORT6);
-//}
 
 void init_encoder_right()
 {
@@ -43,4 +34,5 @@ int read_encoder(uint8_t side)
 	}
 	return coder_value;
 }
+
 

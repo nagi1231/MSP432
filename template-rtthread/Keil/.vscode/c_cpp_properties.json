@@ -8,6 +8,7 @@
                 "d:\\code\\stm32\\msp\\template-rtthread\\Lib\\CMSIS\\include",
                 "d:\\code\\stm32\\msp\\template-rtthread\\RTthread\\bsp",
                 "d:\\code\\stm32\\msp\\template-rtthread\\RTthread\\include",
+                "d:\\code\\stm32\\msp\\template-rtthread\\User\\Driver",
                 "D:\\Environment\\keil\\ARM\\ARMCC\\include",
                 "D:\\Environment\\keil\\ARM\\ARMCC\\include\\rw",
                 "d:\\code\\stm32\\msp\\template-rtthread\\Lib\\ti\\devices\\msp432p4xx\\driverlib",

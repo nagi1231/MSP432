@@ -56,6 +56,7 @@
 #include "Serial.h"
 #include "HC-05.h"
 #include "Encoder.h"
+#include "Motor.h"
 #include "stdio.h"
 #include "stdbool.h"
 #include "string.h"
@@ -154,6 +155,15 @@ static void encoder_entry()
 }
 
 
+static void motor_entry()
+{
+	init_motor();
+	rt_timer_t MotorTimer=rt_timer_create("MotorTimer",set_pwm_trail,RT_NULL,10,RT_TIMER_FLAG_PERIODIC);
+	if(MotorTimer!=RT_NULL)
+	{
+		rt_timer_start(MotorTimer);
+	}
+}
 
 int main(void)
 {
@@ -162,12 +172,17 @@ int main(void)
 	Delay_Init();
   initSerial();
 	
-  //创建并运行encoder线程
-	rt_thread_t encoder_thread=rt_thread_create("Encoder",encoder_entry,RT_NULL,1024,25,50);
-	if(encoder_thread!=RT_NULL)
+	rt_thread_t motorTrail_thread=rt_thread_create("MotorTrail",motor_entry,RT_NULL,1024,25,50);	
+	if(motorTrail_thread!=RT_NULL)
 	{
-		rt_thread_startup(encoder_thread);
+		rt_thread_startup(motorTrail_thread);
 	}
+  //创建并运行encoder线程
+//	rt_thread_t encoder_thread=rt_thread_create("Encoder",encoder_entry,RT_NULL,1024,25,50);
+//	if(encoder_thread!=RT_NULL)
+//	{
+//		rt_thread_startup(encoder_thread);
+//	}
 	//创建并运行hcsr线程
 //	rt_thread_t hcsr_thread=rt_thread_create("HC-SR04",hcsr_entry,RT_NULL,1024,25,50);
 //	if(hcsr_thread!=RT_NULL)

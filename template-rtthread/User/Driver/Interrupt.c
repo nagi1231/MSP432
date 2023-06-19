@@ -23,56 +23,56 @@ void PORT2_IRQHandler(void)
 	}
 	
 	//×ó±àÂëÆ÷ÖÐ¶Ï
-	if(status&GPIO_PIN3)
-	{
-		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
-		{
-			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
-			{
-				encoder_left++;
-			}
-			else
-			{
-				encoder_left--;
-			}
-		}
-		else
-		{
-			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_HIGH)
-			{
-				encoder_left++;
-			}
-			else
-			{
-				encoder_left--;
-			}
-		}
-	}
-	else if(status&GPIO_PIN4)
-	{
-		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
-		{
-			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_HIGH)
-			{
-				encoder_left++;
-			}
-			else
-			{
-				encoder_left--;
-			}
-		}
-		else
-		{
-			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
-			{
-				encoder_left++;
-			}
-			else
-			{
-				encoder_left--;
-			}
-		}
-	}
+	// if(status&GPIO_PIN3)
+	// {
+	// 	if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
+	// 	{
+	// 		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
+	// 		{
+	// 			encoder_left++;
+	// 		}
+	// 		else
+	// 		{
+	// 			encoder_left--;
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_HIGH)
+	// 		{
+	// 			encoder_left++;
+	// 		}
+	// 		else
+	// 		{
+	// 			encoder_left--;
+	// 		}
+	// 	}
+	// }
+	// else if(status&GPIO_PIN4)
+	// {
+	// 	if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
+	// 	{
+	// 		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_HIGH)
+	// 		{
+	// 			encoder_left++;
+	// 		}
+	// 		else
+	// 		{
+	// 			encoder_left--;
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
+	// 		{
+	// 			encoder_left++;
+	// 		}
+	// 		else
+	// 		{
+	// 			encoder_left--;
+	// 		}
+	// 	}
+	// }
 }
 
 void PORT3_IRQHandler(void)
@@ -133,63 +133,63 @@ void PORT3_IRQHandler(void)
 	}
 }
 
-
-//void PORT6_IRQHandler(void)
-//{
-//	uint32_t status=GPIO_getEnabledInterruptStatus(GPIO_PORT_P6);
-//	GPIO_clearInterrupt(GPIO_PORT_P6,status);
-//	
-//	if(status&GPIO_PIN6)
-//	{
-//		if(GPIO_getInputPinValue(GPIO_PORT_P6,GPIO_PIN6)==GPIO_INPUT_PIN_LOW)
-//		{
-//			if(GPIO_getInputPinValue(GPIO_PORT_P6,GPIO_PIN7)==GPIO_INPUT_PIN_LOW)
-//			{
-//				encoder_left++;
-//			}
-//			else
-//			{
-//				encoder_left--;
-//			}
-//		}
-//		else
-//		{
-//			if(GPIO_getInputPinValue(GPIO_PORT_P6,GPIO_PIN7)==GPIO_INPUT_PIN_HIGH)
-//			{
-//				encoder_left++;
-//			}
-//			else
-//			{
-//				encoder_left--;
-//			}
-//		}
-//	}
-//	else if(status&GPIO_PIN7)
-//	{
-//		if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
-//		{
-//			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_HIGH)
-//			{
-//				encoder_left++;
-//			}
-//			else
-//			{
-//				encoder_left--;
-//			}
-//		}
-//		else
-//		{
-//			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
-//			{
-//				encoder_left++;
-//			}
-//			else
-//			{
-//				encoder_left--;
-//			}
-//		}
-//	}
-//}
+//×ó±àÂëÆ÷
+void PORT4_IRQHandler(void)
+{
+	uint32_t status=GPIO_getEnabledInterruptStatus(GPIO_PORT_P4);
+	GPIO_clearInterrupt(GPIO_PORT_P4,status);
+	
+	if(status&GPIO_PIN1)
+	{
+		if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN1)==GPIO_INPUT_PIN_LOW)
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN6)==GPIO_INPUT_PIN_LOW)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+		else
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN6)==GPIO_INPUT_PIN_HIGH)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+	}
+	else if(status&GPIO_PIN6)
+	{
+		if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN6)==GPIO_INPUT_PIN_LOW)
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN1)==GPIO_INPUT_PIN_HIGH)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+		else
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN1)==GPIO_INPUT_PIN_LOW)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+	}
+}
 
 //¼ì²âµ½ÏÂ½µÑØ´¥·¢ÖÐ¶Ï
 void TA0_N_IRQHandler(void)
