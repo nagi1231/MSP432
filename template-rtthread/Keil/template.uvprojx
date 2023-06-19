@@ -677,6 +677,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Driver\HC-05.c</FilePath>
             </File>
+            <File>
+              <FileName>Encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\Encoder.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

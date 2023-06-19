@@ -55,6 +55,7 @@
 #include "Delay.h"
 #include "Serial.h"
 #include "HC-05.h"
+#include "Encoder.h"
 #include "stdio.h"
 #include "stdbool.h"
 #include "string.h"
@@ -129,6 +130,28 @@ static void hc05_entry()
 	}
 }
 
+void sendEncoderBack()
+{
+	int encoder_left,encoder_right;
+	encoder_left=read_encoder(0);
+	encoder_right=read_encoder(1);
+	char text[30];
+	sprintf(text,"right: %d;left: %d",encoder_right,encoder_left);
+	sendText(text);
+}
+
+static void encoder_entry()
+{
+	init_encoder_left();
+	init_encoder_right();
+	
+	rt_timer_t EncoderTimer=rt_timer_create("EncoderTimer",sendEncoderBack,RT_NULL,100,RT_TIMER_FLAG_PERIODIC);
+	if(EncoderTimer!=RT_NULL)
+	{
+		rt_timer_start(EncoderTimer);
+	}
+	
+}
 
 
 
@@ -139,12 +162,18 @@ int main(void)
 	Delay_Init();
   initSerial();
 	
-	//创建并运行hcsr线程
-	rt_thread_t hcsr_thread=rt_thread_create("HC-SR04",hcsr_entry,RT_NULL,1024,25,50);
-	if(hcsr_thread!=RT_NULL)
+  //创建并运行encoder线程
+	rt_thread_t encoder_thread=rt_thread_create("Encoder",encoder_entry,RT_NULL,1024,25,50);
+	if(encoder_thread!=RT_NULL)
 	{
-		rt_thread_startup(hcsr_thread);
+		rt_thread_startup(encoder_thread);
 	}
+	//创建并运行hcsr线程
+//	rt_thread_t hcsr_thread=rt_thread_create("HC-SR04",hcsr_entry,RT_NULL,1024,25,50);
+//	if(hcsr_thread!=RT_NULL)
+//	{
+//		rt_thread_startup(hcsr_thread);
+//	}
 	
 	
 //	blink_thread=rt_thread_create("blink",blink_entry,RT_NULL,1024,25,5);

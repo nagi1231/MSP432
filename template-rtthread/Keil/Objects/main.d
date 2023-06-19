@@ -52,5 +52,6 @@
 .\objects\main.o: ..\User\Driver\Delay.h
 .\objects\main.o: ..\User\Driver\Serial.h
 .\objects\main.o: ..\User\Driver\HC-05.h
+.\objects\main.o: ..\User\Driver\Encoder.h
 .\objects\main.o: D:\Environment\keil\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: D:\Environment\keil\ARM\ARMCC\Bin\..\include\string.h

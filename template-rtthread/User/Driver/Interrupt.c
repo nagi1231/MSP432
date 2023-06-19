@@ -1,6 +1,8 @@
 #include "rtthread.h"
 #include <ti/devices/msp432p4xx/driverlib/driverlib.h>
 #include "HC-SR04.h"
+#include "Encoder.h"
+
 
 //检测到上升沿触发中断
 void PORT2_IRQHandler(void)
@@ -8,6 +10,7 @@ void PORT2_IRQHandler(void)
 	uint32_t status=GPIO_getEnabledInterruptStatus(GPIO_PORT_P2);
 	GPIO_clearInterrupt(GPIO_PORT_P2,status);
 	
+	//hc-sr04的相关中断
 	if(status&GPIO_PIN5)
 	{
 		//使能TA0中断，关闭PORT2中断
@@ -17,6 +20,116 @@ void PORT2_IRQHandler(void)
 		GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P2,GPIO_PIN5,GPIO_PRIMARY_MODULE_FUNCTION);
 		//开始计数
 		Timer_A_startCounter(TIMER_A0_BASE,TIMER_A_CONTINUOUS_MODE);
+	}
+	
+	//左编码器中断
+	if(status&GPIO_PIN3)
+	{
+		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+		else
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_HIGH)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+	}
+	else if(status&GPIO_PIN4)
+	{
+		if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_HIGH)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+		else
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
+			{
+				encoder_left++;
+			}
+			else
+			{
+				encoder_left--;
+			}
+		}
+	}
+}
+
+void PORT3_IRQHandler(void)
+{
+	uint32_t status=GPIO_getEnabledInterruptStatus(GPIO_PORT_P3);
+	GPIO_clearInterrupt(GPIO_PORT_P3,status);
+	
+	//右编码器中断
+	if(status&GPIO_PIN5)
+	{
+		if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN5)==GPIO_INPUT_PIN_LOW)
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN7)==GPIO_INPUT_PIN_LOW)
+			{
+				encoder_right++;
+			}
+			else
+			{
+				encoder_right--;
+			}
+		}
+		else
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN5)==GPIO_INPUT_PIN_HIGH)
+			{
+				encoder_right++;
+			}
+			else
+			{
+				encoder_right--;
+			}
+		}
+	}
+	else if(status&GPIO_PIN7)
+	{
+		if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN7)==GPIO_INPUT_PIN_LOW)
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN5)==GPIO_INPUT_PIN_HIGH)
+			{
+				encoder_right++;
+			}
+			else
+			{
+				encoder_right--;
+			}
+		}
+		else
+		{
+			if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN5)==GPIO_INPUT_PIN_LOW)
+			{
+				encoder_right++;
+			}
+			else
+			{
+				encoder_right--;
+			}
+		}
 	}
 }
 
