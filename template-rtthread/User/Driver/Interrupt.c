@@ -50,7 +50,7 @@ void PORT2_IRQHandler(void)
 	}
 	else if(status&GPIO_PIN4)
 	{
-		if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
+		if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
 		{
 			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_HIGH)
 			{
@@ -96,7 +96,7 @@ void PORT3_IRQHandler(void)
 		}
 		else
 		{
-			if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN5)==GPIO_INPUT_PIN_HIGH)
+			if(GPIO_getInputPinValue(GPIO_PORT_P3,GPIO_PIN7)==GPIO_INPUT_PIN_HIGH)
 			{
 				encoder_right++;
 			}
@@ -132,6 +132,64 @@ void PORT3_IRQHandler(void)
 		}
 	}
 }
+
+
+//void PORT6_IRQHandler(void)
+//{
+//	uint32_t status=GPIO_getEnabledInterruptStatus(GPIO_PORT_P6);
+//	GPIO_clearInterrupt(GPIO_PORT_P6,status);
+//	
+//	if(status&GPIO_PIN6)
+//	{
+//		if(GPIO_getInputPinValue(GPIO_PORT_P6,GPIO_PIN6)==GPIO_INPUT_PIN_LOW)
+//		{
+//			if(GPIO_getInputPinValue(GPIO_PORT_P6,GPIO_PIN7)==GPIO_INPUT_PIN_LOW)
+//			{
+//				encoder_left++;
+//			}
+//			else
+//			{
+//				encoder_left--;
+//			}
+//		}
+//		else
+//		{
+//			if(GPIO_getInputPinValue(GPIO_PORT_P6,GPIO_PIN7)==GPIO_INPUT_PIN_HIGH)
+//			{
+//				encoder_left++;
+//			}
+//			else
+//			{
+//				encoder_left--;
+//			}
+//		}
+//	}
+//	else if(status&GPIO_PIN7)
+//	{
+//		if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN4)==GPIO_INPUT_PIN_LOW)
+//		{
+//			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_HIGH)
+//			{
+//				encoder_left++;
+//			}
+//			else
+//			{
+//				encoder_left--;
+//			}
+//		}
+//		else
+//		{
+//			if(GPIO_getInputPinValue(GPIO_PORT_P2,GPIO_PIN3)==GPIO_INPUT_PIN_LOW)
+//			{
+//				encoder_left++;
+//			}
+//			else
+//			{
+//				encoder_left--;
+//			}
+//		}
+//	}
+//}
 
 //检测到下降沿触发中断
 void TA0_N_IRQHandler(void)

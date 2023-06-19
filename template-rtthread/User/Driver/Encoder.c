@@ -11,6 +11,15 @@ void init_encoder_left()
 	Interrupt_enableInterrupt(INT_PORT2);
 }
 
+
+//void init_encoder_left()
+//{
+//	GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P6,GPIO_PIN6|GPIO_PIN7);
+//	GPIO_clearInterruptFlag(GPIO_PORT_P6,GPIO_PIN6|GPIO_PIN7);
+//	GPIO_enableInterrupt(GPIO_PORT_P6,GPIO_PIN6|GPIO_PIN7);
+//	Interrupt_enableInterrupt(INT_PORT6);
+//}
+
 void init_encoder_right()
 {
 	GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3,GPIO_PIN5|GPIO_PIN7);
