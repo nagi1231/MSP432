@@ -56,6 +56,7 @@
 #include "Serial.h"
 #include "HC-05.h"
 #include "Encoder.h"
+#include "oled.h"
 #include "Motor.h"
 #include "stdio.h"
 #include "stdbool.h"
@@ -137,7 +138,7 @@ void sendEncoderBack()
 	encoder_left=read_encoder(0);
 	encoder_right=read_encoder(1);
 	char text[30];
-	sprintf(text,"right: %d;left: %d",encoder_right,encoder_left);
+	sprintf(text,"right: %d;left: %d\r\n",encoder_right,encoder_left);
 	sendText(text);
 }
 
@@ -145,7 +146,6 @@ static void encoder_entry()
 {
 	init_encoder_left();
 	init_encoder_right();
-	
 	rt_timer_t EncoderTimer=rt_timer_create("EncoderTimer",sendEncoderBack,RT_NULL,100,RT_TIMER_FLAG_PERIODIC);
 	if(EncoderTimer!=RT_NULL)
 	{
@@ -165,24 +165,49 @@ static void motor_entry()
 	}
 }
 
+static void oled_entry()
+{
+	init();
+	OLED_Init();
+	OLED_Clear();
+	while(1)
+	{
+    delay_ms(5);
+    OLED_ShowString(0,0,(unsigned char *)"  2021  8.4");
+    OLED_ShowString(0,2,(unsigned char *)" NUEDC Contest ");
+  	delay_ms(25);
+	}
+}
+
 int main(void)
 {
 	WDT_A_hold(WDT_A_BASE);
 	Interrupt_enableMaster();
 	Delay_Init();
   initSerial();
-	
-	rt_thread_t motorTrail_thread=rt_thread_create("MotorTrail",motor_entry,RT_NULL,1024,25,50);	
-	if(motorTrail_thread!=RT_NULL)
+
+	//创建并运行Oled线程
+	rt_thread_t oled_thread=rt_thread_create("OLED",oled_entry,RT_NULL,1024,25,50);
+	if(oled_thread!=RT_NULL)
 	{
-		rt_thread_startup(motorTrail_thread);
+		rt_thread_startup(oled_thread);
 	}
+	//创建并运行motor线程
+//	rt_thread_t motorTrail_thread=rt_thread_create("MotorTrail",motor_entry,RT_NULL,1024,25,50);	
+//	if(motorTrail_thread!=RT_NULL)
+//	{
+//		rt_thread_startup(motorTrail_thread);
+//	}
+	
+	
   //创建并运行encoder线程
 //	rt_thread_t encoder_thread=rt_thread_create("Encoder",encoder_entry,RT_NULL,1024,25,50);
 //	if(encoder_thread!=RT_NULL)
 //	{
 //		rt_thread_startup(encoder_thread);
 //	}
+	
+	
 	//创建并运行hcsr线程
 //	rt_thread_t hcsr_thread=rt_thread_create("HC-SR04",hcsr_entry,RT_NULL,1024,25,50);
 //	if(hcsr_thread!=RT_NULL)

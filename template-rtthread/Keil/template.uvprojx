@@ -687,6 +687,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Driver\Motor.c</FilePath>
             </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Driver\oled.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
