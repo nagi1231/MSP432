@@ -1,10 +1,3 @@
-*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Environment\keil\ARM\ARMCC\Bin'
-Build target 'template'
-linking...
-.\Objects\template.axf: Error: L6218E: Undefined symbol rt_thread_create (referred from main.o).
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 1 error messages.
-".\Objects\template.axf" - 1 Error(s), 0 Warning(s).
-Target not created.
-Build Time Elapsed:  00:00:01
+Load "d:\\code\\stm32\\msp\\template-rtthread\\Keil\\Objects\\template.axf" 
+Erase Done.Programming Done.Verify OK.Application running ...
+Flash Load finished at 16:37:23
